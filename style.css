@@ -1,0 +1,10 @@
+.rowContainer {
+    display: flex;
+}
+
+
+.square {
+    border: 1px black solid;
+    width: 32px;
+    height: 32px;
+}
