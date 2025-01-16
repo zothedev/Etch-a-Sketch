@@ -1,3 +1,4 @@
+let container = document.querySelector("div");
 createGrid();
 
 // creating the 16x16 square grid
@@ -9,7 +10,6 @@ function createGrid() {
 
 // create one row of 16 squares
 function create16Squares() {
-    let container = document.querySelector("div");
     let rowContainer = document.createElement("div");
     rowContainer.classList.add("rowContainer")
     container.appendChild(rowContainer);
@@ -21,4 +21,10 @@ function create16Squares() {
     }
 }
 
+
+container.addEventListener("mouseover", (e) => {
+    let target = e.target;
+
+    target.classList.add("hovered");
+});
 
