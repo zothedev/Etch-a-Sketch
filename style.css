@@ -1,5 +1,4 @@
-body {
-    box-sizing: border-box;
+html {
 }
 
 .rowContainer {
@@ -11,6 +10,7 @@ body {
     border: 1px black solid;
     width: 48px;
     height: 48px;
+    box-sizing: border-box;
 }
 
 .hovered {
