@@ -25,6 +25,8 @@ function create16Squares() {
 container.addEventListener("mouseover", (e) => {
     let target = e.target;
 
-    target.classList.add("hovered");
+    if (target.classList.contains("square")) {
+        target.classList.add("hovered");
+    }
 });
 
