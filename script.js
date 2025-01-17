@@ -2,9 +2,9 @@ let container = document.querySelector("div");
 createGrid();
 
 // creating the 16x16 square grid
-function createGrid(rows = 16) {
-    for (let i = 0; i < rows; i++) {
-        createSquares(rows);
+function createGrid(squaresPerSide = 16) {
+    for (let i = 0; i < squaresPerSide; i++) {
+        createSquares(squaresPerSide);
     }
 }
 
@@ -21,7 +21,7 @@ function createSquares(squares = 16) {
     }
 }
 
-
+// turn squares red on mouse hover
 container.addEventListener("mouseover", (e) => {
     let target = e.target;
 
@@ -30,3 +30,14 @@ container.addEventListener("mouseover", (e) => {
     }
 });
 
+let changeGridBtn = document.querySelector("#changeGrid");
+changeGridBtn.addEventListener("click", (e) => {
+    removeGrid();
+
+    let squaresPerSide = prompt("How many squares per side?", 16);
+    createGrid(squaresPerSide);
+});
+
+function removeGrid() {
+    container.innerHTML = "";
+}
