@@ -1,9 +1,12 @@
-// current status:
-// - new grid works, but needs to be stretched to fill the space that a 16x16 grid takes up
-// 768 x 768
+// todo:
+// highlight current pen color by adding a thick border around the button
+// layout buttons nicely
+// add a clear button
 
 let container = document.querySelector(".gridContainer");
 createGrid();
+let pen = "rainbow";
+
 
 // creating the 16x16 square grid
 function createGrid(squaresPerSide = 16) {
@@ -32,10 +35,30 @@ function createSquares(squares = 16) {
 // turn squares red on mouse hover
 container.addEventListener("mouseover", (e) => {
     let target = e.target;
+    // rainbow, red, blue, green, yellow, orange, purple, black, white
 
     if (target.classList.contains("square")) {
-        target.style.backgroundColor = 
-        `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+        if (pen == "rainbow") {
+            target.style.backgroundColor =
+                `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+        } else if (pen == "red") {
+            target.style.backgroundColor = `red`;
+        } else if (pen == "blue") {
+            target.style.backgroundColor = `blue`;
+        } else if (pen == "green") {
+            target.style.backgroundColor = `green`;
+        } else if (pen == "yellow") {
+            target.style.backgroundColor = `yellow`;
+        } else if (pen == "orange") {
+            target.style.backgroundColor = `orange`;
+        } else if (pen == "purple") {
+            target.style.backgroundColor = `purple`;
+        } else if (pen == "black") {
+            target.style.backgroundColor = `black`;
+        } else if (pen == "white") {
+            target.style.backgroundColor = `white`;
+        }
+
     }
 });
 
@@ -66,3 +89,30 @@ function removeGrid() {
 function randomRGB() {
     return Math.floor(Math.random() * 256);
 }
+
+// change pen color
+let header = document.querySelector(".header");
+header.addEventListener("click", (e) => {
+    let target = e.target;
+    console.log("hello");
+
+    if (target.id === "rainbowButton") {
+        pen = "rainbow";
+    } else if (target.id === "redButton") {
+        pen = "red";
+    } else if (target.id === "blueButton") {
+        pen = "blue";
+    } else if (target.id === "greenButton") {
+        pen = "green";
+    } else if (target.id === "yellowButton") {
+        pen = "yellow";
+    } else if (target.id === "orangeButton") {
+        pen = "orange";
+    } else if (target.id === "purpleButton") {
+        pen = "purple";
+    } else if (target.id === "blackButton") {
+        pen = "black";
+    } else if (target.id === "whiteButton") {
+        pen = "white";
+    }
+});
