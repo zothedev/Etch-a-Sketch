@@ -34,10 +34,9 @@ container.addEventListener("mouseover", (e) => {
     let target = e.target;
 
     if (target.classList.contains("square")) {
-        target.classList.add("hovered");
+        target.style.backgroundColor = "red";
     }
 });
-
 
 // when user clicks change grid button, remove current grid and
 // create a new grid when the entered amount of squares per side
