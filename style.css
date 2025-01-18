@@ -9,8 +9,8 @@
 
 .square {
     border: 1px black solid;
-    width: 48px;
-    height: 48px;
+    /* width: 48px;
+    height: 48px; */
     box-sizing: border-box;
 }
 
