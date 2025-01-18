@@ -39,11 +39,22 @@ container.addEventListener("mouseover", (e) => {
 });
 
 
+// when user clicks change grid button, remove current grid and
+// create a new grid when the entered amount of squares per side
 let changeGridBtn = document.querySelector("#changeGrid");
 changeGridBtn.addEventListener("click", () => {
     removeGrid();
 
     let squaresPerSide = prompt("How many squares per side?", 16);
+    while (true) {
+
+        if (squaresPerSide > 100) {
+            alert("Sorry, we don't have enough hamster-power to support over 100 squares per side. Please try again!\n₍ᵔ•ᴗ•ᵔ₎");
+            squaresPerSide = prompt("How many squares per side?", 16);
+            continue;
+        }
+        break;
+    }
     createGrid(squaresPerSide);
 });
 
