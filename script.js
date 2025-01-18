@@ -6,7 +6,7 @@
 
 let container = document.querySelector(".gridContainer");
 createGrid();
-let pen = "rainbow";
+let pen = "red";
 let penOn = true;
 
 
@@ -23,7 +23,7 @@ function createSquares(squares = 16) {
     rowContainer.classList.add("rowContainer")
     container.appendChild(rowContainer);
 
-    let squareSize = 768 / squares;
+    let squareSize = 864 / squares;
 
     for (let i = 0; i < squares; i++) {
         let square = document.createElement("div");
@@ -37,13 +37,11 @@ function createSquares(squares = 16) {
 let mainContainer = document.querySelector(".main");
 mainContainer.addEventListener("mousedown", (e) => {
     if (e.button == 2) {
-        console.log("inoff");
         penOn = false;
     }
 });
 mainContainer.addEventListener("mouseup", (e) => {
     if (e.button == 2) {
-        console.log("inoff");
         penOn = true;
     }
 });
@@ -119,6 +117,10 @@ function randomRGB() {
 let buttons = document.querySelector(".buttons");
 buttons.addEventListener("click", (e) => {
     let target = e.target;
+    if (target.type == "button") {
+        target.classList.toggle("selected");
+    }
+
 
     if (target.id === "rainbowButton") {
         pen = "rainbow";
