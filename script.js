@@ -7,6 +7,7 @@
 let container = document.querySelector(".gridContainer");
 createGrid();
 let pen = "rainbow";
+let penOn = true;
 
 
 // creating the 16x16 square grid
@@ -33,12 +34,26 @@ function createSquares(squares = 16) {
     }
 }
 
-// turn squares red on mouse hover
+let mainContainer = document.querySelector(".main");
+mainContainer.addEventListener("mousedown", (e) => {
+    if (e.button == 2) {
+        console.log("inoff");
+        penOn = false;
+    }
+});
+mainContainer.addEventListener("mouseup", (e) => {
+    if (e.button == 2) {
+        console.log("inoff");
+        penOn = true;
+    }
+});
+// change square color on mouse hover
 container.addEventListener("mouseover", (e) => {
     let target = e.target;
     // rainbow, red, blue, green, yellow, orange, purple, black, white
 
-    if (target.classList.contains("square")) {
+
+    if (target.classList.contains("square") && (penOn)) {
         if (pen == "rainbow") {
             target.style.backgroundColor =
                 `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
@@ -86,6 +101,7 @@ function removeGrid() {
     container.textContent = "";
 }
 
+// clears the grid on button press
 let clearGridButton = document.querySelector("#clearButton");
 clearGridButton.addEventListener("click", () => {
     let squares = document.querySelectorAll(".square");
