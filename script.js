@@ -2,6 +2,7 @@
 // highlight current pen color by adding a thick border around the button
 // layout buttons nicely
 // add a clear button
+// theme the website "fizz's sketchbook"
 
 let container = document.querySelector(".gridContainer");
 createGrid();
@@ -85,6 +86,14 @@ function removeGrid() {
     container.textContent = "";
 }
 
+let clearGridButton = document.querySelector("#clearButton");
+clearGridButton.addEventListener("click", () => {
+    let squares = document.querySelectorAll(".square");
+    for (let square of squares) {
+        square.style.backgroundColor = "white";
+    }
+});
+
 // returns a random number between 0 - 255 (inclusive)
 function randomRGB() {
     return Math.floor(Math.random() * 256);
@@ -94,7 +103,6 @@ function randomRGB() {
 let header = document.querySelector(".header");
 header.addEventListener("click", (e) => {
     let target = e.target;
-    console.log("hello");
 
     if (target.id === "rainbowButton") {
         pen = "rainbow";
