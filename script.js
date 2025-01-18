@@ -34,7 +34,8 @@ container.addEventListener("mouseover", (e) => {
     let target = e.target;
 
     if (target.classList.contains("square")) {
-        target.style.backgroundColor = "red";
+        target.style.backgroundColor = 
+        `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
     }
 });
 
@@ -59,4 +60,9 @@ changeGridBtn.addEventListener("click", () => {
 
 function removeGrid() {
     container.textContent = "";
+}
+
+// returns a random number between 0 - 255 (inclusive)
+function randomRGB() {
+    return Math.floor(Math.random() * 256);
 }
