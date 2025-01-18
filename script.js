@@ -116,8 +116,8 @@ function randomRGB() {
 }
 
 // change pen color
-let header = document.querySelector(".header");
-header.addEventListener("click", (e) => {
+let buttons = document.querySelector(".buttons");
+buttons.addEventListener("click", (e) => {
     let target = e.target;
 
     if (target.id === "rainbowButton") {
