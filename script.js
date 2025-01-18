@@ -1,4 +1,8 @@
-let container = document.querySelector("div");
+// current status:
+// - change grid button disappears on-click
+// - new grid works, but needs to be stretched to fill the space that a 16x16 grid takes up
+
+let container = document.querySelector(".gridContainer");
 createGrid();
 
 // creating the 16x16 square grid
@@ -30,8 +34,9 @@ container.addEventListener("mouseover", (e) => {
     }
 });
 
+
 let changeGridBtn = document.querySelector("#changeGrid");
-changeGridBtn.addEventListener("click", (e) => {
+changeGridBtn.addEventListener("click", () => {
     removeGrid();
 
     let squaresPerSide = prompt("How many squares per side?", 16);
@@ -39,5 +44,5 @@ changeGridBtn.addEventListener("click", (e) => {
 });
 
 function removeGrid() {
-    container.innerHTML = "";
+    container.textContent = "";
 }

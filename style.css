@@ -1,10 +1,11 @@
-html {
+.gridContainer {
+    display: inline-block;
+    border: 1px black solid;
 }
 
 .rowContainer {
     display: flex;
 }
-
 
 .square {
     border: 1px black solid;
