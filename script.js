@@ -23,7 +23,7 @@ function createSquares(squares = 16) {
     rowContainer.classList.add("rowContainer")
     container.appendChild(rowContainer);
 
-    let squareSize = 864 / squares;
+    let squareSize = 768 / squares;
 
     for (let i = 0; i < squares; i++) {
         let square = document.createElement("div");

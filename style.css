@@ -71,7 +71,7 @@ header img {
 }
 
 .tips p{
-    font-size: 30px;
+    font-size: 20px;
     padding: 20px 0;
     /* width: 300px; */
 
@@ -83,7 +83,7 @@ header img {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 20%;
+    /* width: 30%; */
 }
 
 .tips h2 {
